@@ -1,0 +1,7 @@
+numpy
+pandas
+pathlib
+scikit-learn
+openpyxl
+fastapi
+uvicorn

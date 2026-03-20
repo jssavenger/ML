@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en" class="h-screen w-full">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ML Model</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="w-full min-h-screen bg-gray-100">
+    <header class="flex w-full h-[15%] bg-white shadow-sm items-center justify-center">
+        <h1 class="font-bold text-2xl">IBM Telco Customer Churn Prediction</h1>
+    </header>
+
+    <main class="flex flex-col w-full min-h-[85%] items-center p-6 gap-6">
+        <form id="predictionForm" class="flex flex-col w-full max-w-4xl bg-white shadow-md rounded-xl p-6 gap-4">
+
+            <div class="grid grid-cols-2 gap-4">
+                <div class="flex flex-col">
+                    <label class="mb-1 font-medium">Gender</label>
+                    <input type="number" name="Gender" class="p-2 border border-gray-400 rounded-md outline-none" required>
+                </div>
+
+                <div class="flex flex-col">
+                    <label class="mb-1 font-medium">Age</label>
+                    <input type="number" name="Age" class="p-2 border border-gray-400 rounded-md outline-none" required>
+                </div>
+
+                <div class="flex flex-col">
+                    <label class="mb-1 font-medium">Population</label>
+                    <input type="number" name="Population" class="p-2 border border-gray-400 rounded-md outline-none" required>
+                </div>
+
+                <div class="flex flex-col">
+                    <label class="mb-1 font-medium">Number of Referrals</label>
+                    <input type="number" name="Number of Referrals" class="p-2 border border-gray-400 rounded-md outline-none" required>
+                </div>
+
+                <div class="flex flex-col">
+                    <label class="mb-1 font-medium">Tenure in Months</label>
+                    <input type="number" name="Tenure in Months" class="p-2 border border-gray-400 rounded-md outline-none" required>
+                </div>
+
+                <div class="flex flex-col">
+                    <label class="mb-1 font-medium">Avg Monthly Long Distance Charges</label>
+                    <input type="number" step="any" name="Avg Monthly Long Distance Charges" class="p-2 border border-gray-400 rounded-md outline-none" required>
+                </div>
+
+                <div class="flex flex-col">
+                    <label class="mb-1 font-medium">Internet Service</label>
+                    <input type="number" name="Internet Service" class="p-2 border border-gray-400 rounded-md outline-none" required>
+                </div>
+
+                <div class="flex flex-col">
+                    <label class="mb-1 font-medium">Avg Monthly GB Download</label>
+                    <input type="number" name="Avg Monthly GB Download" class="p-2 border border-gray-400 rounded-md outline-none" required>
+                </div>
+
+                <div class="flex flex-col">
+                    <label class="mb-1 font-medium">Premium Tech Support</label>
+                    <input type="number" name="Premium Tech Support" class="p-2 border border-gray-400 rounded-md outline-none" required>
+                </div>
+
+                <div class="flex flex-col">
+                    <label class="mb-1 font-medium">Paperless Billing</label>
+                    <input type="number" name="Paperless Billing" class="p-2 border border-gray-400 rounded-md outline-none" required>
+                </div>
+
+                <div class="flex flex-col">
+                    <label class="mb-1 font-medium">Monthly Charge</label>
+                    <input type="number" step="any" name="Monthly Charge" class="p-2 border border-gray-400 rounded-md outline-none" required>
+                </div>
+
+                <div class="flex flex-col">
+                    <label class="mb-1 font-medium">Total Charges</label>
+                    <input type="number" step="any" name="Total Charges" class="p-2 border border-gray-400 rounded-md outline-none" required>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 mt-4">
+                <label class="flex items-center gap-2">
+                    <input type="checkbox" name="Referred a Friend_Yes" class="w-4 h-4">
+                    <span>Referred a Friend Yes</span>
+                </label>
+
+                <label class="flex items-center gap-2">
+                    <input type="checkbox" name="Phone Service_Yes" class="w-4 h-4">
+                    <span>Phone Service Yes</span>
+                </label>
+
+                <label class="flex items-center gap-2">
+                    <input type="checkbox" name="Multiple Lines_Yes" class="w-4 h-4">
+                    <span>Multiple Lines Yes</span>
+                </label>
+
+                <label class="flex items-center gap-2">
+                    <input type="checkbox" name="Internet Type_DSL" class="w-4 h-4">
+                    <span>Internet Type DSL</span>
+                </label>
+
+                <label class="flex items-center gap-2">
+                    <input type="checkbox" name="Internet Type_Fiber Optic" class="w-4 h-4">
+                    <span>Internet Type Fiber Optic</span>
+                </label>
+
+                <label class="flex items-center gap-2">
+                    <input type="checkbox" name="Internet Type_No Internet" class="w-4 h-4">
+                    <span>Internet Type No Internet</span>
+                </label>
+
+                <label class="flex items-center gap-2">
+                    <input type="checkbox" name="Unlimited Data_Yes" class="w-4 h-4">
+                    <span>Unlimited Data Yes</span>
+                </label>
+
+                <label class="flex items-center gap-2">
+                    <input type="checkbox" name="Contract_One Year" class="w-4 h-4">
+                    <span>Contract One Year</span>
+                </label>
+
+                <label class="flex items-center gap-2">
+                    <input type="checkbox" name="Contract_Two Year" class="w-4 h-4">
+                    <span>Contract Two Year</span>
+                </label>
+
+                <label class="flex items-center gap-2">
+                    <input type="checkbox" name="Payment Method_Credit Card" class="w-4 h-4">
+                    <span>Payment Method Credit Card</span>
+                </label>
+
+                <label class="flex items-center gap-2">
+                    <input type="checkbox" name="Payment Method_Mailed Check" class="w-4 h-4">
+                    <span>Payment Method Mailed Check</span>
+                </label>
+            </div>
+
+            <button type="submit" class="mt-6 bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition">
+                Submit
+            </button>
+        </form>
+
+        <div class="w-full max-w-4xl bg-white shadow-md rounded-xl p-6">
+            <h2 class="text-xl font-bold mb-4">Prediction Result</h2>
+            <div id="result"
+                class="w-full min-h-[100px] border border-gray-300 rounded-md p-4 bg-gray-50 text-gray-700">
+                Result will appear here...
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const form = document.getElementById("predictionForm");
+        const resultBox = document.getElementById("result");
+
+        form.addEventListener("submit", async function (event) {
+            event.preventDefault();
+
+            resultBox.innerText = "Loading...";
+
+            const formData = new FormData(form);
+
+            const payload = {
+                "Gender": Number(formData.get("Gender")),
+                "Age": Number(formData.get("Age")),
+                "Population": Number(formData.get("Population")),
+                "Number of Referrals": Number(formData.get("Number of Referrals")),
+                "Tenure in Months": Number(formData.get("Tenure in Months")),
+                "Avg Monthly Long Distance Charges": Number(formData.get("Avg Monthly Long Distance Charges")),
+                "Internet Service": Number(formData.get("Internet Service")),
+                "Avg Monthly GB Download": Number(formData.get("Avg Monthly GB Download")),
+                "Premium Tech Support": Number(formData.get("Premium Tech Support")),
+                "Paperless Billing": Number(formData.get("Paperless Billing")),
+                "Monthly Charge": Number(formData.get("Monthly Charge")),
+                "Total Charges": Number(formData.get("Total Charges")),
+                "Referred a Friend_Yes": formData.get("Referred a Friend_Yes") !== null,
+                "Phone Service_Yes": formData.get("Phone Service_Yes") !== null,
+                "Multiple Lines_Yes": formData.get("Multiple Lines_Yes") !== null,
+                "Internet Type_DSL": formData.get("Internet Type_DSL") !== null,
+                "Internet Type_Fiber Optic": formData.get("Internet Type_Fiber Optic") !== null,
+                "Internet Type_No Internet": formData.get("Internet Type_No Internet") !== null,
+                "Unlimited Data_Yes": formData.get("Unlimited Data_Yes") !== null,
+                "Contract_One Year": formData.get("Contract_One Year") !== null,
+                "Contract_Two Year": formData.get("Contract_Two Year") !== null,
+                "Payment Method_Credit Card": formData.get("Payment Method_Credit Card") !== null,
+                "Payment Method_Mailed Check": formData.get("Payment Method_Mailed Check") !== null
+            };
+
+            try {
+                const response = await fetch("http://127.0.0.1:342/predict", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(payload)
+                });
+
+                const data = await response.json();
+
+                if (!response.ok) {
+                    resultBox.innerText = data.detail || "Request failed.";
+                    return;
+                }
+                let r = ""
+                if (data.response == "No"){
+                    r = "customer will not churn"
+                } else {
+                    r = "customer will churn"
+                }
+                resultBox.innerText = `Prediction: ${r}`;
+            } catch (error) {
+                resultBox.innerText = "Connection error.";
+                console.error(error);
+            }
+        });
+    </script>
+</body>
+
+</html>
