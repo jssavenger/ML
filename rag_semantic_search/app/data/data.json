@@ -1,0 +1,82 @@
+[
+  {
+    "id": "docker_001",
+    "text": "Docker is a platform that allows developers to package applications and their dependencies into containers. Containers ensure consistency across environments and are lightweight compared to virtual machines."
+  },
+  {
+    "id": "docker_002",
+    "text": "A Docker image is a read-only template used to create containers. A container is a running instance of an image and can be started, stopped, and deleted."
+  },
+  {
+    "id": "docker_003",
+    "text": "A Dockerfile is a script that contains instructions to build a Docker image. Each instruction creates a layer, and Docker caches layers to optimize build speed."
+  },
+  {
+    "id": "docker_004",
+    "text": "The docker build command creates an image from a Dockerfile. It uses a build context and supports tagging images using the -t flag."
+  },
+  {
+    "id": "docker_005",
+    "text": "The docker run command creates and starts a container from an image. Common options include -d for detached mode and -p for port mapping."
+  },
+  {
+    "id": "docker_006",
+    "text": "Port mapping in Docker allows exposing container ports to the host system. The syntax is -p host_port:container_port."
+  },
+  {
+    "id": "docker_007",
+    "text": "Docker volumes are used to persist data outside of containers. They are managed by Docker and provide better performance and portability than bind mounts."
+  },
+  {
+    "id": "docker_008",
+    "text": "Docker Compose is a tool used to define and run multi-container applications using a YAML configuration file."
+  },
+  {
+    "id": "docker_009",
+    "text": "Docker networks enable communication between containers. The default network types include bridge, host, and none."
+  },
+  {
+    "id": "docker_010",
+    "text": "Docker layer caching speeds up image builds by reusing unchanged layers. Proper ordering of Dockerfile instructions improves caching efficiency."
+  },
+  {
+    "id": "docker_011",
+    "text": "The FROM instruction in a Dockerfile specifies the base image. It is usually the first instruction and defines the starting point of the build."
+  },
+  {
+    "id": "docker_012",
+    "text": "The WORKDIR instruction sets the working directory inside the container. All subsequent commands run relative to this directory."
+  },
+  {
+    "id": "docker_013",
+    "text": "The COPY instruction copies files from the host system into the container image during the build process."
+  },
+  {
+    "id": "docker_014",
+    "text": "The RUN instruction executes commands during image build time, such as installing packages or dependencies."
+  },
+  {
+    "id": "docker_015",
+    "text": "The CMD instruction defines the default command that runs when a container starts. It can be overridden at runtime."
+  },
+  {
+    "id": "docker_016",
+    "text": "The docker ps command lists running containers. Using -a shows all containers including stopped ones."
+  },
+  {
+    "id": "docker_017",
+    "text": "The docker stop command stops a running container gracefully, allowing processes to terminate properly."
+  },
+  {
+    "id": "docker_018",
+    "text": "The docker rm command removes a container from the system. The container must be stopped before removal."
+  },
+  {
+    "id": "docker_019",
+    "text": "The docker images command lists all locally available Docker images on the system."
+  },
+  {
+    "id": "docker_020",
+    "text": "The docker logs command retrieves logs from a container, which is useful for debugging and monitoring application behavior."
+  }
+]
