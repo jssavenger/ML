@@ -14,21 +14,34 @@ from ..api.llm_api import router as LLMRouters
 # Services
 from ..classes.llm import LLM
 
+# Read Yaml
+from ..utils.yaml_reader import llm_settings, system_prompts, collection_settings
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     print(f"\nApp starting now...\n")
         
+    # read dataset
     dataset = read_json()
     ids, documents = preprocess_dataset(dataset)
 
-    vector_db = VectorDB()
+    # Create vector db object and collections, then add data.
+    vector_db = VectorDB(collection_settings)
     vector_db.create_collection()
     vector_db.add_collection(ids, documents)
-    
     print(f"Collection created.")
 
+    # Create vector database instance
     app.state.vector_db = vector_db
-    app.state.llm_model = LLM()
+    
+    # Create LLM model instance
+    app.state.llm_model = LLM(llm_settings, system_prompts)
+    
+    # Add state llm_settings and system_prompts
+    app.state.llm_settings = llm_settings
+    app.state.system_prompts = system_prompts
+    
+    print(f"All dependencies are ready.")
     
     yield
     
