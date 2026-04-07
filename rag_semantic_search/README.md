@@ -69,6 +69,20 @@ pip install --no-cache-dir -r requirements.txt
 python -m app.main.main
 ```
 
+#### Step 1
+
+![Image 1](./image/rag.png)
+
+Wait lifespan process...
+
+#### Step 2
+
+![Image 2](./image/rag2.png)
+
+#### You can go Swagger UI now.
+
 ### Gets Swagger UI
 
 Click to [Swagger UI](http://localhost:2222/docs#/).
+
+![Image 3](./image/rag3.png)

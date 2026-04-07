@@ -1,0 +1,4 @@
+vector_db_settings:
+  model_name: text-embedding-3-small
+  collection_name: my_collection
+  max_results: 10
