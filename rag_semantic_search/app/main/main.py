@@ -35,7 +35,7 @@ async def lifespan(app: FastAPI):
     app.state.vector_db = vector_db
     
     # Create LLM model instance
-    app.state.llm_model = LLM()
+    app.state.llm_model = LLM(llm_settings, system_prompts)
     
     # Add state llm_settings and system_prompts
     app.state.llm_settings = llm_settings

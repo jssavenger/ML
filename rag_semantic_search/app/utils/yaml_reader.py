@@ -44,6 +44,3 @@ def read_yaml(file_path: str, model: BaseModel):
 llm_settings = read_yaml(_LLM_SETTINGS_YAML, LLMSettings)
 system_prompts = read_yaml(_PROMPTS_YAML, SystemPrompts)
 collection_settings = read_yaml(_VECTOR_DATABASE_YAML, VectorDatabaseSettings)
-
-settings = collection_settings.vector_db_settings
-print(settings.collection_name)

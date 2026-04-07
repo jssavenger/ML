@@ -33,6 +33,9 @@ async def llm_client(data: LLMMessagesSchema, request: Request):
     """
     
     llm_model = request.app.state.llm_model
-    await llm_model.client(data)
-    return True
+    messages = await llm_model.create_messages_schema(data)
+    response = await llm_model.client(messages)
+    return {
+        "response": response
+    } 
     

@@ -25,7 +25,7 @@ class VectorDB:
         """
         try:
             self.collection = self.client.create_collection(
-                name=self.collection,
+                name=self.collection_name,
                 embedding_function=OpenAIEmbeddingFunction(
                     api_key=self.openai_api_key,
                     model_name=self.model_name
@@ -33,7 +33,7 @@ class VectorDB:
             )
             return True
         except Exception as e:
-            print(f"Error: {str(e).strip()}")
+            print(f"Error from create_collection: {str(e).strip()}")
             return False
     
     def add_collection(self, ids: list, documents: list):
