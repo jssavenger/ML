@@ -1,4 +1,4 @@
-# Machine Learning Repository by Emin Ocak
+# Machine Learning Repository
 
 ![mainimage](./mainimage.png)
 
